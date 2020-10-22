@@ -16,14 +16,14 @@ import java.util.List;
 public class BracketsString {
 
     public static void main(String[] args) {
-        String text = "({[[]][]}{})[]";
+        String text = "{}{[]}";
         System.out.println("Is brackets string valid? " + isBracketStringValid(text));
     }
 
     public static boolean isBracketStringValid(String text) {
         boolean res = false;
 
-        if (text != null && (text.length() % 2) == 0) {
+        if (text != null && !text.trim().isEmpty() && (text.length() % 2) == 0) {
             HashMap open_closing_hm = new HashMap();
             open_closing_hm.put("(", ")");
             open_closing_hm.put("{", "}");
